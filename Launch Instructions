@@ -1,0 +1,18 @@
+1. Make sure Java and Maven are installed on your computer.
+
+2. Clone the project with your RESTful application using Git, or download it as a ZIP archive and extract it to a
+location of your choice.
+
+3. Open a command prompt (for Windows) or a terminal (for Mac or Linux) and navigate to the root folder of the project.
+
+4. Run the `mvn clean install` command to build the project. This command will build your application and create an
+executable JAR file in the target folder.
+
+5. Run the application using the command `java -jar target/filename.jar`, where `filename` is the name of the JAR file
+created in the previous step.
+
+6. Once the application is running, you can test it by opening a web browser and entering a URL in the format:
+`http://localhost:80/`, where `80` is the port your application is running on. If everything is working correctly, you
+should see the start page of your application. I hope this guide will help you get your RESTful application up and
+running on your local machine. If you have any
+questions or problems, ask for help.

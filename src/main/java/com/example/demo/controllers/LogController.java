@@ -38,6 +38,7 @@ public class LogController {
                         .append(";");
             }
 
+            logService.writeErrorLogger(log);
             throw new JsonError(error.toString());
         }
 

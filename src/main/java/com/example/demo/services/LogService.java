@@ -8,8 +8,6 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
-
 @Service
 public class LogService {
     private final Logger logger = LoggerFactory.getLogger(Log.class);
@@ -24,10 +22,17 @@ public class LogService {
     }
 
     public void save(Log log) {
+        String path = "/home/nevasik/Desktop/projectTest/out.json";
+
         logger.info("Save Log={} to database", log);
-        logRepository.save(log); //
+        logRepository.save(log);
 
         logger.info("Save log={} to file", log);
         logFileRepository.save(log);
+
+    }
+
+    public void writeErrorLogger(Log log) {
+        logger.error("Error log={} to save", log);
     }
 }

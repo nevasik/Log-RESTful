@@ -27,7 +27,7 @@ public class Log {
     private String level;
 
     @Column(name = "time")
-    @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss")
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss")
     private LocalDateTime time;
 
     public Log() {
