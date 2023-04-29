@@ -12,7 +12,6 @@ Requires:
 spring-boot:run
 ``
 
-``
 ## In the terminal:
 ``
 ./mvnw spring-boot:build-image
