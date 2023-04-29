@@ -80,6 +80,10 @@ public class Log {
         this.time = time;
     }
 
+    public String toWriteFile() {
+        return String.format("%s, %s, %s, %s", message, type, level, time + "\n");
+    }
+
     @Override
     public String toString() {
         return String.format("%s, %s, %s, %s", message, type, level, time);

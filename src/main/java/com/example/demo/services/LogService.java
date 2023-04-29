@@ -14,23 +14,26 @@ public class LogService {
 
     private final LogRepository logRepository;
     private final LogFileRepository logFileRepository;
+//    private final LoggingRepository loggingRepositoryDb;
 
     @Autowired
     public LogService(LogRepository logRepository, LogFileRepository logFileRepository) {
         this.logRepository = logRepository;
         this.logFileRepository = logFileRepository;
+//        this.loggingRepositoryDb = loggingRepositoryDb;
     }
 
     public void save(Log log) {
-        String path = "/home/nevasik/Desktop/projectTest/out.json";
-
-        logger.info("Save Log={} to database", log);
+        logger.info("Save to database Log={} ", log);
         logRepository.save(log);
 
-        logger.info("Save log={} to file", log);
+        logger.info("Save to file Log={} ", log);
         logFileRepository.save(log);
-
     }
+
+//    public void saveDbLog(JsonError jsonError) {
+//        loggingRepositoryDb.save(jsonError);
+//    }
 
     public void writeErrorLogger(Log log) {
         logger.error("Error log={} to save", log);
