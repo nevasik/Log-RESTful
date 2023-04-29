@@ -4,14 +4,16 @@ import com.example.demo.models.Log;
 import com.example.demo.services.LogService;
 import com.example.demo.util.JsonError;
 import com.example.demo.util.LogErrorResponse;
+import io.swagger.v3.oas.annotations.Operation;
+
 import jakarta.validation.Valid;
+import org.springdoc.core.annotations.ParameterObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.FieldError;
 import org.springframework.web.bind.annotation.*;
-
 
 import java.util.List;
 
@@ -25,8 +27,10 @@ public class LogController {
         this.logService = logService;
     }
 
+
     @PostMapping
-    public ResponseEntity<HttpStatus> postJson(@RequestBody @Valid Log log,
+    @Operation(description = "Sending message as JSON")
+    public ResponseEntity<HttpStatus> postJson(@ParameterObject @RequestBody @Valid Log log,
                                            BindingResult bindingResult) {
         if (bindingResult.hasErrors()) {
             StringBuilder error = new StringBuilder();
@@ -49,11 +53,13 @@ public class LogController {
     }
 
     @GetMapping
+    @Operation(description = "Getting all messages as JSON")
     public List<Log> getJson() {
         return logService.findAll();
     }
 
     @GetMapping("/healthcheck")
+    @Operation(description = "Endpoint для healthcheck-а")
     public ResponseEntity<HttpStatus> endPoint() {
         logService.writeOkLogger();
 
@@ -61,6 +67,7 @@ public class LogController {
     }
 
     @ExceptionHandler
+    @Operation(description = "Returns NOT_FOUND on invalid JSON submission")
     private ResponseEntity<LogErrorResponse> handleException(JsonError e) {
         LogErrorResponse response = new LogErrorResponse(
                 e.getMessage(),

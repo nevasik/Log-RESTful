@@ -22,14 +22,29 @@ sudo docker run -p80:8080 projectest:0.0.1-SNAPSHOT
 ``
 
 ``
-In browser localhost:80/core-api/logs
+PORT: 80
 ``
 
 ``
-To see the code documentation in OpenAPI format go to this URL:
+In browser
+``
+http://localhost:80/core-api/logs
+
+## Available methods:
+``
+POST(/logs){set in JSON body} - Sending message as JSON.
 ``
 
-http://localhost:8080/swagger-ui.html
+``
+GET(/logs) - Getting all messages as JSON
+``
+
+``
+GET(/healthcheck) - Endpoint для healthcheck-а
+``
+
+# To see the code documentation in OpenAPI format go to this URL:
+http://localhost:8080/core-api/swagger-ui/index.html
 
 # Note
 No need to install maven

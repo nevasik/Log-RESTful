@@ -13,7 +13,7 @@ import java.nio.file.StandardOpenOption;
 
 @Repository
 public class LogFileRepository {
-    @Value("/home/nevasik/Desktop/projectTest/out")
+    @Value("/home/nevasik/Desktop/sber/projectTest/out")
     private Path path;
 
     public void save(Log log) {
