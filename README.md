@@ -29,7 +29,7 @@ In browser localhost:80/core-api/logs
 To see the code documentation in OpenAPI format go to this URL:
 ``
 
-(http://localhost:8080/swagger-ui.html)
+http://localhost:8080/swagger-ui.html
 
 # Note
 No need to install maven
