@@ -39,12 +39,25 @@ public class LogController {
             }
 
             logService.writeErrorLogger(log);
+
             throw new JsonError(error.toString());
         }
 
         logService.save(log);
 
         return ResponseEntity.ok().build();
+    }
+
+    @GetMapping
+    public List<Log> getJson() {
+        return logService.findAll();
+    }
+
+    @GetMapping("/healthcheck")
+    public ResponseEntity<HttpStatus> endPoint() {
+        logService.writeOkLogger();
+
+        return ResponseEntity.ok(HttpStatus.OK);
     }
 
     @ExceptionHandler
