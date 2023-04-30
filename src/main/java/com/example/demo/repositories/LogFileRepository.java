@@ -1,7 +1,7 @@
 package com.example.demo.repositories;
 
 import com.example.demo.models.Log;
-import com.example.demo.util.FiledException;
+import com.example.demo.util.FailedException;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Repository;
@@ -13,7 +13,7 @@ import java.nio.file.StandardOpenOption;
 
 @Repository
 public class LogFileRepository {
-    @Value("/home/nevasik/Desktop/sber/projectTest/out")
+    @Value("out")
     private Path path;
 
     public void save(Log log) {
@@ -21,7 +21,7 @@ public class LogFileRepository {
             Files.write(path, log.toWriteFile().getBytes(), StandardOpenOption.APPEND);
 
         } catch (IOException e) {
-            throw new FiledException("Failed to save file");
+            throw new FailedException("Failed to save file");
         }
     }
 }

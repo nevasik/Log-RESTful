@@ -5,12 +5,15 @@ Allows to persist logs to a database and file and show the history of the logs
 Requires:
 [Java](https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html) v17 or higher to run
 [Docker](https://docs.docker.com/desktop/install/linux-install/) on Linux, (https://docs.docker.com/desktop/install/mac-install/) on Mac, (https://docs.docker.com/desktop/install/windows-install/) on Windows
+[PostgreSQL](https://www.postgresql.org/)
 
 ## Running
 
 ``
 spring-boot:run
 ``
+
+## Script to create table in resources
 
 ## In the terminal:
 ``
