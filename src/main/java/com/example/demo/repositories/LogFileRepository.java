@@ -24,4 +24,13 @@ public class LogFileRepository {
             throw new FailedException("Failed to save file");
         }
     }
+
+    public void save(String message) {
+        try {
+            Files.write(path, (message + "\n").getBytes(), StandardOpenOption.APPEND);
+//            Files.write(path, "\n".getBytes(), StandardOpenOption.APPEND);
+        } catch (IOException e) {
+            throw new FailedException("Failed to save file");
+        }
+    }
 }

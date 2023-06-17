@@ -40,6 +40,8 @@ public class LogService {
     }
 
     public void writeOkLogger() {
-        logger.info("Result successful");
+        String outSuccessful = "Result successful";
+        logger.info(outSuccessful);
+        logFileRepository.save(outSuccessful);
     }
 }

@@ -43,7 +43,7 @@ GET(/logs) - Getting all messages as JSON
 ``
 
 ``
-GET(/healthcheck) - Endpoint для healthcheck-а
+GET(/logs/healthcheck) - Endpoint для healthcheck-а
 ``
 
 # To see the code documentation in OpenAPI format go to this URL:
